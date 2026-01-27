@@ -6,6 +6,7 @@
 //     AccountType type;                       /**< The type of the account. */
 //     std::vector<std::string> history;       /**< Log of all transaction descriptions. */
 
+// Constructor 
 BankAccount:: BankAccount(double initialDeposit, AccountType accountType) {
     this->balance = initialDeposit; 
     this->type = accountType;
