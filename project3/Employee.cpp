@@ -181,4 +181,64 @@ void Developer:: setProjectCount(int count) {
     this-> projectCount = count; 
 }
 
-// For intern clas
+// For intern class 
+// constructor 
+Intern:: Intern (const std::string& id, const std::string& name, 
+                const std::string& email, const std::string& hireDate, 
+                const std::string& dept, const std::string& university, 
+                int durationMonths, const std::string& mentorName) 
+    : Employee(id, name, email, hireDate, dept) { 
+        this-> university = university; 
+        this-> durationMonths = durationMonths; 
+        this-> mentorName = mentorName; 
+}
+
+double Intern:: calculateSalary() const { 
+    return INTERN_STIPEND;
+}
+
+std::string Intern:: getResponsibilities() const { 
+    return "doing with " + mentorName + 
+           " and studying at " + university;
+}   
+
+std:string Intern:: getRole() const { 
+    return "Intern";
+}
+
+std::string Intern:: getUniversity() const { 
+    return this-> university; 
+}
+
+int getDurationMonths() const { 
+    return this-> durationMonths; 
+}
+
+std::string Intern:: getMentorName() const { 
+    return this-> mentorName; 
+}
+
+//For senior manager class 
+//constructor 
+SeniorManager::SeniorManager(const std::string& id,const std::string& name,
+        const std::string& email, const std::string& hireDate, const std::string& dept,
+        int teamSize, const std::string& level, double annualBonus, const std::string& scope) 
+    : Manager(id, name, email, hireDate, dept, teamSize, level, annualBonus) {
+        this-> scope = scope;
+}
+
+double SeniorManager:: calculateSalary() const { 
+    return Manager::calculateSalary() + SCOPE_BONUS;
+}
+
+std::string SeniorManager:: getResponsibilities() const { 
+    return Manager::getResponsibilities() + "with scope" + scope;
+}
+
+std::string SeniorManager:: getRole() const { 
+    return "Senior Manager";
+}
+
+std::string SeniorManager:: getScope() const { 
+    return this-> scope; 
+}
