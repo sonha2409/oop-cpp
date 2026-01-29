@@ -33,11 +33,10 @@ class Circle : public Shape {
 private:
     double radius;
 public:
-    Circle(double r) : radius(r) {}
-    
-    // --- TASK 3: Overriding ---
-    // Use the 'override' keyword. This helps the compiler catch typos.
-    /* FILL IN: area(), perimeter(), and getName() */
+    Circle(double r);
+    double area() const override;
+    double perimeter() const override;
+    std::string getName() const override { return "Circle"; }
 };
 
 class Rectangle : public Shape {
