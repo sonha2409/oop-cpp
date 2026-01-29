@@ -8,7 +8,8 @@ C++ project for practicing **inheritance**, **method overriding**, and **calling
 |------|--------|
 | **Employee.h** | Class declarations (base `Employee` and derived `Manager`, `Developer`, `Intern`, `SeniorManager`). **Do not change** unless instructed. |
 | **FUNCTION_SPECIFICATION.md** | Detailed behavior of every function. Use this to implement each member function correctly. |
-| **README.md** | This file — project overview and how to build/run. |
+| **Employee_test.cpp** | Google Test–based unit tests for all classes and polymorphism. |
+| **README.md** | This file — project overview, build, and testing. |
 
 ## Concepts Covered
 
@@ -28,11 +29,20 @@ C++ project for practicing **inheritance**, **method overriding**, and **calling
    (`MANAGER_BASE_SALARY`, `INTERN_STIPEND`, `SCOPE_BONUS`).
 4. **Add** a small `main()` (e.g. in `main.cpp`) that constructs at least one of each type, stores them in base pointers if desired, and calls `displayInfo()` and `calculateSalary()` to test polymorphism.
 
-## Suggested Build
+## Build and Test
 
-- **Single .cpp:** Put all implementations in `Employee.cpp`, then compile e.g.  
-  `g++ -std=c++17 -Wall -Wextra main.cpp Employee.cpp -o employee_demo`
-- **With CMake:** Add `Employee.cpp` and `main.cpp` to your `add_executable(...)` and `target_include_directories(...)` so `#include "Employee.h"` works.
+**Demo only (no Google Test):**
+```bash
+make employee_demo    # or: g++ -std=c++17 -Wall -Wextra main.cpp Employee.cpp -o employee_demo
+./employee_demo
+```
+
+**With tests (requires [Google Test](https://github.com/google/googletest); e.g. `brew install googletest`):**
+```bash
+make Employee_test    # build tests
+make test             # build and run tests
+```
+Or with CMake: configure with GTest found, then build the `Employee_test` target and run it.
 
 ## Example Usage (after implementation)
 
